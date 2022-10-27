@@ -89,7 +89,7 @@ function App() {
       <div>
         <TextAnnotateMulti
           text={demoText}
-          setLabelUnits={(newLabelUnits:LabelUnit[]) => {
+          updateLabelUnits={(newLabelUnits:LabelUnit[]) => {
             setLabelUnits(newLabelUnits);
           }}
           labelUnits={labelUnits}

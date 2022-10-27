@@ -89,7 +89,9 @@ function App() {
       <div>
         <TextAnnotateMulti
           text={demoText}
-          setLabelUnits={setLabelUnits}
+          setLabelUnits={(newLabelUnits:LabelUnit[]) => {
+            setLabelUnits(newLabelUnits);
+          }}
           labelUnits={labelUnits}
           labelName={labelName}
           getBackgroungColor={getBackgroungColor}
@@ -112,7 +114,7 @@ function App() {
 |  text  |  string  | Text you want to annotate. |
 |  labelName  |  string  | Name of a label you want to annotate. This may be a state of a React component which refers to a value of select tag. |
 |  labelUnits  |  LabelUnit[]  | An array of `LabelUnit`(*) which corresponds to label data. This may be a state of a React component which stores label data. |
-|  setLabelUnits  |  React.Dispatch&lt;React.SetStateAction&lt;LabelUnit[]&gt;&gt; | `React.SetStateAction` which updates labelUnits.   |
+|  updateLabelUnits  |  Fired when label data is updated. Call `React.SetStateAction` in this function to update the state of labelUnits.  |
 |  getBackgroungColor  |  (labelNames: Set&lt;string&gt;) => string  | A function which returns a background color of labeled name set. Returned string must be interpretable as a backgroundColor property of CSS. (e.g. "#42f5f5", "rgb(179, 245, 66)", etc...) |
 |  textElementGenerator<br>(optional)  |  (text: string) => string &#124; JSX.Element &#124; JSX.Element[]  | A function which generates a text node / element(s). Useful when you want to modify labeled text (e.g. highlighting keywords).  |
 

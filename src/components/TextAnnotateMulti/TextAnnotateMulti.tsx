@@ -19,7 +19,7 @@ type TextAnnotateMultiProps = {
   text: string;
   labelUnits: LabelUnit[];
   labelName: string;
-  setLabelUnits: React.Dispatch<React.SetStateAction<LabelUnit[]>>;
+  updateLabelUnits: (newLabelUnits: LabelUnit[]) => void;
   getBackgroungColor: (labelNames: Set<string>) => string;
   textElementGenerator?: (text: string) => string | JSX.Element | JSX.Element[];
 };
@@ -77,7 +77,7 @@ const TextAnnotateMulti = (props: TextAnnotateMultiProps) => {
       }
       const newLabelUnits = getLabelUnitsFromIndexedInfo(text, indexedInfo);
 
-      props.setLabelUnits(newLabelUnits);
+      props.updateLabelUnits(newLabelUnits);
     }
   };
 
@@ -104,7 +104,7 @@ const TextAnnotateMulti = (props: TextAnnotateMultiProps) => {
         return true;
       }
     });
-    props.setLabelUnits(newLabelUnits);
+    props.updateLabelUnits(newLabelUnits);
   };
 
   const { text, labelUnits } = props;

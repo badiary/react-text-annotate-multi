@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/badiary"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React Component for text annotation with arbitrary number of overlapping labels",
   "scripts": {
     "rollup": "rollup -c"
